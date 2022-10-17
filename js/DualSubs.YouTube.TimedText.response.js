@@ -263,12 +263,12 @@ async function CombineDualSubs(Format = "VTT", Sub1 = {}, Sub2 = {}, Offset = 0,
 				//$.log(`🚧`, `index1/length1: ${index1}/${length1}`, `index2/length2: ${index2}/${length2}`, "");
 				const timeStamp1 = parseInt(Sub1.timedtext.body.p[index1]["@t"], 10);
 				const timeStamp2 = parseInt(Sub2.timedtext.body.p[index2]["@t"], 10);
-				//$.log(`🚧`, `timeStamp1: ${timeStamp1}`, `timeStamp2: ${timeStamp2}`, "");
+				$.log(`🚧`, `timeStamp1: ${timeStamp1}`, `timeStamp2: ${timeStamp2}`, "");
 				if (Math.abs(timeStamp1 - timeStamp2) <= 0) {
 					index0 = Options.includes("Reverse") ? index2 : index1;
 					const text1 = Sub1.timedtext.body.p[index1]?.["#"];
 					const text2 = Sub2.timedtext.body.p[index2]?.["#"];
-					$.log(`🚧`, `text1: ${text1}`, `text2: ${text2}`, "");
+					//$.log(`🚧`, `text1: ${text1}`, `text2: ${text2}`, "");
 					if (text1 && text2) {
 						DualSub.timedtext.body.p[index0]["#"] = Options.includes("Reverse") ? `${text2}&#x000A;${text1}` : `${text1}&#x000A;${text2}`;
 						//$.log(`🚧`, `DualSub.timedtext.body.p[index0]["#"]: ${DualSub.timedtext.body.p[index0]["#"]}`, "");
