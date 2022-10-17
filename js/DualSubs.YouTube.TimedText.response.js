@@ -72,7 +72,7 @@ if ($response.status != 200 && $response.statusCode != 200) $.done();
 					switch (url.params?.kind) {
 						case "asr":
 							$.log(`类型 ${url.params?.kind} 跳过`, "");
-							//break;
+							break;
 						case "captions":
 						default:
 							// 创建字幕Object
@@ -273,9 +273,9 @@ async function CombineDualSubs(Format = "VTT", Sub1 = {}, Sub2 = {}, Offset = 0,
 						DualSub.timedtext.body.p[index0]["#"] = Options.includes("Reverse") ? `${text2}&#x000A;${text1}` : `${text1}&#x000A;${text2}`;
 						//$.log(`🚧`, `DualSub.timedtext.body.p[index0]["#"]: ${DualSub.timedtext.body.p[index0]["#"]}`, "");
 					}
-					$.log(`🚧`, `DualSub.timedtext.body.p[index0]["#"]: ${DualSub.timedtext.body.p[index0]["#"]}`, "");
-					DualSub.timedtext.body.p[index0]["@t"] = Options.includes("Reverse") ? timeStamp2 : timeStamp1;
-					DualSub.timedtext.body.p[index0].index = Options.includes("Reverse") ? index2 : index1;
+					
+					//DualSub.timedtext.body.p[index0]["@t"] = Options.includes("Reverse") ? timeStamp2 : timeStamp1;
+					//DualSub.timedtext.body.p[index0].index = Options.includes("Reverse") ? index2 : index1;
 					/*
 					const sentences1 = Sub1.timedtext.body.p[index1]?.s;
 					const sentences2 = Sub2.timedtext.body.p[index1]?.s;
