@@ -71,7 +71,7 @@ if ($response.status != 200 && $response.statusCode != 200) $.done();
 				else {
 					switch (url.params?.kind) {
 						case "asr":
-							break;
+							//break;
 						case "captions":
 						default:
 							// 创建字幕Object
