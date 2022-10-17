@@ -229,7 +229,7 @@ async function CombineDualSubs(Format = "VTT", Sub1 = {}, Sub2 = {}, Offset = 0,
 	//$.log(`🚧 ${$.name}, Combine Dual Subtitles`,`Sub1内容: ${JSON.stringify(Sub1)}`, "");
 	//$.log(`🚧 ${$.name}, Combine Dual Subtitles`,`Sub2内容: ${JSON.stringify(Sub2)}`, "");
 	let DualSub = Options.includes("Reverse") ? Sub2 : Sub1
-	//$.log(`🚧 ${$.name}, Combine Dual Subtitles`,`let DualSub内容: ${JSON.stringify(DualSub)}`, "");
+	$.log(`🚧 ${$.name}, Combine Dual Subtitles`,`let DualSub内容: ${JSON.stringify(DualSub)}`, "");
 	// 有序数列 用不着排序
 	//FirstSub.body.sort((x, y) => x - y);
 	//SecondSub.body.sort((x, y) => x - y);
@@ -263,7 +263,7 @@ async function CombineDualSubs(Format = "VTT", Sub1 = {}, Sub2 = {}, Offset = 0,
 				//$.log(`🚧`, `index1/length1: ${index1}/${length1}`, `index2/length2: ${index2}/${length2}`, "");
 				const timeStamp1 = parseInt(Sub1.timedtext.body.p[index1]["@t"], 10);
 				const timeStamp2 = parseInt(Sub2.timedtext.body.p[index2]["@t"], 10);
-				$.log(`🚧`, `timeStamp1: ${timeStamp1}`, `timeStamp2: ${timeStamp2}`, "");
+				//$.log(`🚧`, `timeStamp1: ${timeStamp1}`, `timeStamp2: ${timeStamp2}`, "");
 				if (Math.abs(timeStamp1 - timeStamp2) <= 0) {
 					index0 = Options.includes("Reverse") ? index2 : index1;
 					const text1 = Sub1.timedtext.body.p[index1]?.["#"];
