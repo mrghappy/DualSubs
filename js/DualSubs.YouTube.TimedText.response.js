@@ -71,6 +71,7 @@ if ($response.status != 200 && $response.statusCode != 200) $.done();
 				else {
 					switch (url.params?.kind) {
 						case "asr":
+							$.log(`类型 url.params?.kind 跳过`, "");
 							break;
 						case "captions":
 						default:
